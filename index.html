@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX for AI in Temple Fortune Poems</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: #8b0000; color: white; padding: 1rem; text-align: center; }
+        
+        /* Tab 導航列 */
+        .tab-container { display: flex; justify-content: center; background: #333; }
+        .tab-button { background: none; border: none; color: white; padding: 14px 20px; cursor: pointer; transition: 0.3s; font-size: 17px; }
+        .tab-button:hover { background-color: #555; }
+        .tab-button.active { background-color: #8b0000; }
+
+        /* 內容區域 */
+        .content { display: none; padding: 20px; max-width: 800px; margin: 20px auto; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .content.active { display: block; }
+        
+        .assignment-block { border-left: 5px solid #8b0000; padding: 15px; margin-bottom: 20px; background: #fff9f9; }
+        h2 { color: #8b0000; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UX for AI: 籤詩現代化詮釋</h1>
+</header>
+
+<div class="tab-container">
+    <button class="tab-button active" onclick="openTab(event, 'Home')">專案介紹</button>
+    <button class="tab-button" onclick="openTab(event, 'Assignment')">作業區</button>
+</div>
+
+<div id="Home" class="content active">
+    <h2>專案背景：改善傳統求籤體驗</h2>
+    <p>根據使用者訪談 ，我們發現傳統線上求籤網站存在以下問題：</p>
+    <ul>
+        <li><strong>資訊傳達不直觀</strong>：解籤內容含有大量文言文，使用者不願花時間閱讀 。</li>
+        <li><strong>互動流程冗長</strong>：多次點擊（擲筊）被認為是無效互動 。</li>
+        <li><strong>缺乏個人化</strong>：解籤結果往往過於籠統，無法針對具體問題（如學業、家庭）提供精準建議 。</li>
+    </ul>
+    <p>我們的目標是導入 <strong>AI 技術</strong>，讓結果更個人化，並提升 UX/UI 的直覺性。</p>
+</div>
+
+<div id="Assignment" class="content">
+    <h2>課程作業區</h2>
+    
+    <div class="assignment-block">
+        <h3>作業一：使用者研究與訪談</h3>
+        <p>我們針對臺灣省城隍廟的線上求籤系統進行了四位受訪者的測試 。</p>
+        <strong>主要發現：</strong>
+        <ul>
+            <li>受訪者普遍認為 UI 嚴重過時，入口難以尋找 。</li>
+            <li>受訪者 D 在沒有提示的情況下，很難找到「線上求籤」的按鈕 。</li>
+            <li>使用者對 AI 導入後的隱私保護（如姓名、地址）有高度顧慮 。</li>
+        </ul>
+        <a href="https://docs.google.com/document/d/1bLw_FU8enDzoC5i77ILGkLYZS5dIIqBrhd0GQV40Tk4/edit" target="_blank">查看原始訪談文檔 </a>
+    </div>
+
+    <div class="assignment-block" style="border-left: 5px solid #ccc; background: #eee;">
+        <h3>作業二：(待增加)</h3>
+        <p>此區塊保留給未來的專案進度更新。</p>
+    </div>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, content, tabButtons;
+        content = document.getElementsByClassName("content");
+        for (i = 0; i < content.length; i++) {
+            content[i].style.display = "none";
+            content[i].classList.remove("active");
+        }
+        tabButtons = document.getElementsByClassName("tab-button");
+        for (i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].classList.remove("active");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
